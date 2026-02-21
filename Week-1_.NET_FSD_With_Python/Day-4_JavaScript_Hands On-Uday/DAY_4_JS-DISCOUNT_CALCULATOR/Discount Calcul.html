@@ -1,0 +1,62 @@
+<!--Problem 3: Simple Discount Calculator (Level-1)
+Scenario
+An online store wants to apply a discount based on the total purchase amount.
+📌 Requirements
+•	Store purchase amount in a variable
+•	Apply discount rules:
+o	Amount ≥ 5000 → 20% discount
+o	Amount ≥ 3000 → 10% discount
+o	Amount < 3000 → No discount
+•	Calculate and display:
+o	Discount amount
+o	Final payable amount -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+    
+</head>
+<body>
+
+<h2>Online Store Discount</h2>
+
+<script>
+
+let amount = 3500;   // Purchase amount 
+
+let discount = 0;
+let finalAmount = 0;
+
+// Discount rules
+if (amount >= 5000) {
+    discount = amount * 0.20;
+}
+else if (amount >= 3000) {
+    discount = amount * 0.10;
+}
+else {
+    discount = 0;
+}
+
+// Final payable amount
+finalAmount = amount - discount;
+
+// Output
+document.write("Purchase Amount: " + amount + "<br>");
+document.write("Discount: " + discount + "<br>");
+document.write("Final Payable Amount: " + finalAmount);
+
+</script>
+
+</body>
+</html>
+
+
+
