@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Enrollment Form</title>
+</head>
+<body>
+
+<header>
+    <h1>Course Enrollment</h1>
+</header>
+
+<main>
+
+<form>
+
+    <fieldset>
+        <legend>Student Information</legend>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" min="16" max="60" required>
+        <br><br>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Course Selection</legend>
+
+        <label for="course">Choose Course:</label>
+        <input list="courses" id="course" required>
+
+        <datalist id="courses">
+            <option value="HTML">
+            <option value="CSS">
+            <option value="JavaScript">
+            <option value="Python">
+            <option value="Java">
+        </datalist>
+
+        <br><br>
+
+        <label for="level">Skill Level:</label>
+        <meter value="0.6" min="0" max="1">60%</meter>
+
+        <br><br>
+
+        <label for="range">Interest Level:</label>
+        <input type="range" min="1" max="10">
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Enrollment Status</legend>
+
+        <label>Form Completion:</label>
+        <progress value="70" max="100"></progress>
+
+    </fieldset>
+
+    <br>
+
+    <input type="submit" value="Enroll">
+
+</form>
+
+</main>
+
+<footer>
+    <p>Online Learning Platform</p>
+</footer>
+
+</body>
+</html>
