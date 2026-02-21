@@ -1,0 +1,86 @@
+/* Whole Page font styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+/* Navigation  */
+nav {
+    background-color: #004080;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* Text styling */
+h1 {
+    color: #004080;
+}
+
+h2 {
+    color: #ff69b4;
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Section with background, border */
+.box {
+    background-color: white;
+    border: 3px solid #004080;
+    margin: 40px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Form container with margin & padding */
+.form-container {
+    background-color: white;
+    width: 350px;
+    margin: 40px auto;
+    padding: 25px;
+    border: 2px solid #004080;
+    border-radius: 10px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+input[type="submit"] {
+    background-color: #004080;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #00264d;
+}
+
+/* Radio buttons */
+.radio-group {
+    margin: 10px 0;
+}
