@@ -1,1 +1,248 @@
+body {
+    background-color: #f8f9fa;
+}
 
+/* Reduce navbar height */
+.navbar {
+    padding: 8px 20px !important;
+}
+
+/* Reduce top spacing */
+.container {
+    margin-top: 20px !important;
+}
+
+/* Fix table top spacing */
+#employeeSection {
+    margin-top: 10px;
+}
+
+/* Premium Navbar Gradient */
+.navbar.bg-primary {
+    background: linear-gradient(135deg, #1e3a8a, #06b6d4) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Brand Styling */
+.navbar-brand {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+}
+
+/* Navbar Buttons */
+.navbar .btn {
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Add Employee Button */
+#addEmployeeBtn {
+    background: #ffffff;
+    color: #1e3a8a;
+}
+
+/* Logout Button */
+#logoutBtn {
+    background: #ef4444;
+    border: none;
+}
+
+/* Hover Effects */
+.navbar .btn:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.bar {
+    height: 8px;
+    background: #3b82f6;
+    border-radius: 5px;
+}
+
+/* Attractive Gradient Background */
+.bg-custom {
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    min-height: 100vh;
+    align-items: center;
+}
+
+
+/* Glass Effect Card */
+.card {
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h2 {
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Button Hover Effect */
+.btn-primary:hover,
+.btn-success:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.auth-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-section .row {
+    width: 100%;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    transition: 0.3s;
+}
+
+#dashboardCards .card {
+    min-height: 140px;
+}
+
+.badge-engineering {
+    background-color: #0d6efd;
+}
+
+.badge-marketing {
+    background-color: #198754;
+}
+
+.badge-hr {
+    background-color: #ffc107;
+    color: black;
+}
+
+.badge-finance {
+    background-color: #6f42c1;
+}
+
+.badge-operations {
+    background-color: #dc3545;
+}
+
+.status-active {
+    background-color: #198754;
+}
+
+.status-inactive {
+    background-color: #dc3545;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+#departmentBreakdown .bar {
+    height: 24px;
+    background-color: #0d6efd;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.toast {
+    min-width: 250px;
+}
+
+/* Status Filter Buttons */
+.status-filter {
+    font-weight: 600;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+/* Active button highlight */
+.status-filter.active-btn {
+    color: white !important;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border: none;
+}
+
+/* Inactive button */
+.status-filter.inactive-btn {
+    color: white !important;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border: none;
+}
+
+/* All button */
+.status-filter.all-btn {
+    color: white !important;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+}
+
+/* Avatar Circle */
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #3b82f6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Dashboard Cards Hover */
+#dashboardCards .card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+/* Progress Bar Styling */
+.progress {
+    height: 8px;
+    border-radius: 10px;
+}
+
+/* Department Table Progress */
+.progress {
+    height: 10px;
+    border-radius: 10px;
+    background-color: #e5e7eb;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+/* Table styling */
+#departmentBreakdown table {
+    font-size: 14px;
+}
+
+#departmentBreakdown th {
+    color: #6b7280;
+}
+
+/* Fix content below navbar */
+body {
+    padding-top: 70px;
+}
+
+/* Reduce auth section overlap */
+.auth-section {
+    margin-top: 20px;
+}
