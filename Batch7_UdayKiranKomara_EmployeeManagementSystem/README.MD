@@ -130,7 +130,7 @@ Implemented unit testing using **Jest**:
 1. Clone the repository
 
 ```bash
-git clone <your-repo-link>
+git clone <https://github.com/KOMARAUDAYKIRAN/UdayKiranKomara_.NetFSD_upGrad_B4_Python/tree/main/Batch7_UdayKiranKomara_EmployeeManagementSystem>
 ```
 
 2. Navigate to project folder
