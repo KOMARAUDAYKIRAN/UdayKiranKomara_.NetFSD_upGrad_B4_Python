@@ -79,23 +79,48 @@ In this project, it is upgraded to use a **real SQL Server database with authent
 
 ---
 
-# 📁 Project Structure
+📁 Project Structure
 EMS-MiniProject2/
 │
-├── EMS.API/ # Backend
-│ ├── Controllers/
-│ ├── Services/
-│ ├── Repositories/
-│ ├── Models/
-│ ├── DTOs/
-│ ├── Data/
-│ ├── Program.cs
-│ └── appsettings.json
+├── EMS.API/                         # .NET 8 Web API (Backend)
+│   ├── Controllers/
+│   │   ├── EmployeesController.cs   # CRUD + dashboard + pagination
+│   │   └── AuthController.cs        # /auth/register + /auth/login
+│   │
+│   ├── Data/
+│   │   └── AppDbContext.cs          # EF Core DbContext + seed data
+│   │
+│   ├── DTOs/
+│   │   └── EmployeeDtos.cs          # Request/Response DTOs
+│   │
+│   ├── Models/
+│   │   ├── Employee.cs
+│   │   └── AppUser.cs
+│   │
+│   ├── Services/
+│   │   ├── EmployeeService.cs       # Filtering, sorting, pagination
+│   │   ├── IEmployeeRepository.cs   # Interface (data contract)
+│   │   ├── EmployeeRepository.cs    # Implementation
+│   │   └── AuthService.cs           # JWT + BCrypt hashing
+│   │
+│   ├── appsettings.json             # DB + JWT configuration
+│   ├── Program.cs                   # DI, CORS, Swagger, Auth
+│   └── EMS.API.csproj
 │
-└── frontend/ # Frontend
-├── index.html
-├── css/
-└── js/
+└── frontend/                        # Frontend (Mini Project 1 updated)
+    ├── index.html
+    ├── css/
+    │   └── styles.css
+    │
+    └── js/
+        ├── config.js                # API base URL
+        ├── storageService.js        # API calls using fetch()
+        ├── authService.js           # Auth APIs
+        ├── employeeService.js       # Async operations
+        ├── validationService.js     # Validation + server errors
+        ├── dashboardService.js      # Dashboard API
+        ├── uiService.js             # UI + pagination
+        └── app.js                   # Main app logic
 
 ---
 
