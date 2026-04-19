@@ -1,0 +1,111 @@
+<!-- Problem 1: Greeting Generator (Level-1)
+Scenario
+A simple webpage should greet users based on the name they enter. This helps beginners understand how JavaScript functions accept parameters and how variables behave inside functions.
+📌 Requirements
+•	Create an input box to enter a user’s name.
+•	Create a button labeled “Generate Greeting”.
+•	When the button is clicked:
+•	A JavaScript function should accept the name as a parameter.
+•	Display a greeting message like:
+        “Hello, Rahul! Welcome to our website.”
+•	Display the greeting inside a <p> element.
+  -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Generator</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#f2f9ff;
+        }
+
+        .box{
+            width:400px;
+            margin:auto;
+            margin-top:60px;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+            text-align:center;
+        }
+
+        input{
+            padding:8px;
+            width:80%;
+            border:2px solid #3498db;
+            border-radius:5px;
+        }
+
+        button{
+            margin-top:10px;
+            padding:8px 15px;
+            border:none;
+            background:#3498db;
+            color:white;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#217dbb;
+        }
+
+        p{
+            color:#2c3e50;
+            font-weight:bold;
+            margin-top:15px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>Natural Greeting Generator</h2>
+
+<input type="text" id="username" placeholder="Enter your complete name">
+
+<br>
+
+<button onclick="sendName()">Submit</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+function sendName()
+{
+    let a = document.getElementById("username").value;
+
+    if(a === "")
+    {
+        alert("Please enter your name");
+        return;
+    }
+
+    showGreeting(a);
+}
+
+function showGreeting(name)
+{
+    let message = "HI, " + name + "! Welcome to our fabulous website.";
+
+    document.getElementById("result").innerHTML = message;
+}
+
+</script>
+
+</body>
+</html>

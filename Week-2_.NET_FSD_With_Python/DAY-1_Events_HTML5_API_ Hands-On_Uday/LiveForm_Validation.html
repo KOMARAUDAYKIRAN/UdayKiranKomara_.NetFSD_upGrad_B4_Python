@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        h2{
+            color: #2c3e50;
+        }
+
+        .box{
+            background: white;
+            padding: 20px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        label{
+            display: inline-block;
+            width: 80px;
+            font-weight: bold;
+        }
+
+        .row{
+            margin-bottom: 12px;
+        }
+
+        input{
+            padding: 5px;
+        }
+
+        .success{
+            color: green;
+            font-weight: bold;
+        }
+
+        .error{
+            color: red;
+            font-weight: bold;
+        }
+
+        button{
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: #219150;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<center>
+
+<div class="box">
+
+<h2>Registration</h2>
+
+<div class="row">
+    <label>Name :</label>
+    <input type="text" id="name" onchange="checkName()">
+    <span id="nameMsg"></span>
+</div>
+
+<div class="row">
+    <label>Email :</label>
+    <input type="text" id="email" onchange="checkEmail()">
+    <span id="emailMsg"></span>
+</div>
+
+<div class="row">
+    <label>Age :</label>
+    <input type="number" id="age" onchange="checkAge()">
+    <span id="ageMsg"></span>
+</div>
+
+<br>
+
+<button onclick="saveData()">Register</button>
+
+<p id="finalMsg"></p>
+
+</div>
+
+</center>
+
+<script>
+
+function checkName()
+{
+    let n = document.getElementById("name").value;
+    let namePattern = /^[A-Za-z ]+$/;
+
+    if(n === "")
+    {
+        alert("Name cannot be empty");
+        nameMsg.innerHTML = "Required";
+        nameMsg.className = "error";
+    }
+    else if(!namePattern.test(n))
+    {
+        alert("Name must contain only letters");
+        nameMsg.innerHTML = "Only letters allowed";
+        nameMsg.className = "error";
+    }
+    else
+    {
+        nameMsg.innerHTML = "OK";
+        nameMsg.className = "success";
+    }
+}
+
+function checkEmail()
+{
+    let e = document.getElementById("email").value;
+
+    if(!e.includes("@"))
+    {
+        alert("Enter valid email");
+        emailMsg.innerHTML = "Invalid";
+        emailMsg.className = "error";
+    }
+    else
+    {
+        emailMsg.innerHTML = "OK";
+        emailMsg.className = "success";
+    }
+}
+
+function checkAge()
+{
+    let a = document.getElementById("age").value;
+
+    if(a <= 18 || a === "")
+    {
+        alert("Age must be greater than 18");
+        ageMsg.innerHTML = "Not allowed";
+        ageMsg.className = "error";
+    }
+    else
+    {
+        ageMsg.innerHTML = "OK";
+        ageMsg.className = "success";
+    }
+}
+
+function saveData()
+{
+    let n = name.value;
+    let e = email.value;
+    let a = age.value;
+
+    if(n === "" || e === "" || a === "")
+    {
+        alert("All fields are required");
+        return;
+    }
+
+    sessionStorage.setItem("userName", n);
+    sessionStorage.setItem("userEmail", e);
+    sessionStorage.setItem("userAge", a);
+
+    finalMsg.innerHTML = " Data stored successfully";
+    finalMsg.className = "success";
+}
+
+</script>
+
+</body>
+</html>

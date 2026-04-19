@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Expense Tracker</title>
+
+    <style>
+        body{font-family:Arial;background:#f2f2f2;}
+        .box{
+            background:white;
+            width:420px;
+            margin:auto;
+            margin-top:30px;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+        input,button{margin:5px;padding:6px;}
+        button{background:#2ecc71;color:white;border:none;border-radius:4px;}
+        button:hover{background:#27ae60;}
+        li{margin:6px 0;}
+    </style>
+
+</head>
+<body onload="openDB()">
+
+<div class="box">
+
+<h3>Expense Tracker (Indexed_DB)</h3>
+
+<input type="text" id="title" placeholder="Expense Title"><br>
+<input type="number" id="amount" placeholder="Amount"><br>
+<input type="date" id="date"><br>
+
+<button onclick="addExpense()">Add Expense</button>
+<button onclick="viewExpenses()">View Expenses</button>
+
+<ul id="list"></ul>
+
+</div>
+
+<script>
+
+let db;
+
+function openDB()
+{
+    let request = indexedDB.open("expenseDB",1);
+
+    request.onupgradeneeded = function(e)
+    {
+        db = e.target.result;
+        db.createObjectStore("expenses",{keyPath:"id",autoIncrement:true});
+    };
+
+    request.onsuccess = function(e)
+    {
+        db = e.target.result;
+    };
+
+    request.onerror = function()
+    {
+        alert("DB error");
+    };
+}
+
+function addExpense()
+{
+    let t = title.value;
+    let a = amount.value;
+    let d = date.value;
+
+    if(t=="" || a=="" || d=="")
+    {
+        alert("fill all fields");
+        return;
+    }
+
+    let tx = db.transaction("expenses","readwrite");
+
+    let store = tx.objectStore("expenses");
+
+    store.add({title:t,amount:a,date:d});
+
+    tx.oncomplete = function()
+    {
+        alert("expense added");
+        title.value="";
+        amount.value="";
+        date.value="";
+    };
+
+    tx.onerror = function()
+    {
+        alert("transaction error");
+    };
+}
+
+function viewExpenses()
+{
+    list.innerHTML="";
+
+    let tx = db.transaction("expenses","readonly");
+
+    let store = tx.objectStore("expenses");
+
+    let request = store.openCursor();
+
+    request.onsuccess = function(e)
+    {
+        let cursor = e.target.result;
+
+        if(cursor)
+        {
+            let li = document.createElement("li");
+
+            li.innerHTML =
+            cursor.value.title+" - ₹"+
+            cursor.value.amount+" - "+
+            cursor.value.date+
+            " <button onclick='deleteExpense("+cursor.value.id+")'>Delete</button>";
+
+            list.appendChild(li);
+
+            cursor.continue();
+        }
+    };
+
+    request.onerror = function()
+    {
+        alert("query error");
+    };
+}
+
+function deleteExpense(id)
+{
+    let tx = db.transaction("expenses","readwrite");
+
+    let store = tx.objectStore("expenses");
+
+    store.delete(id);
+
+    tx.oncomplete = function()
+    {
+        viewExpenses();
+    };
+
+    tx.onerror = function()
+    {
+        alert("delete error");
+    };
+}
+
+</script>
+
+</body>
+</html>

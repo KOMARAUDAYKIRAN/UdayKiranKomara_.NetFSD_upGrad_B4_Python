@@ -1,0 +1,153 @@
+<!-- Problem 2 (Level-1): Dynamic FAQ Toggle Section
+Scenario:
+A website contains a Frequently Asked Questions (FAQ) section. The company wants answers to appear and disappear when users click on the questions.
+Requirements
+* Create at least 5 FAQ questions with hidden answers.
+* Use jQuery click() event to toggle answers.
+* Apply slideToggle() or show()/hide() methods.
+* Highlight the selected question using CSS class manipulation.
+ 
+️ Technical Constraints
+* Use only jQuery methods for DOM manipulation.
+* Use class selectors and ID selectors appropriately.
+* Avoid inline JavaScript.
+ 
+Expectations:
+* Smooth UI interaction.
+* Proper use of jQuery effects.
+* Organized HTML structure.
+ 
+Learning Outcome
+* Implement event handling using jQuery.
+* Use basic jQuery effects.
+* Practice DOM traversal and manipulation. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FAQ Toggle</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 650px;
+            margin: 60px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .faq {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            padding: 18px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .faq:hover {
+            transform: scale(1.02);
+        }
+
+        .question {
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .question::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        .question.active::after {
+            content: "−";
+        }
+
+        .answer {
+            display: none;
+            margin-top: 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .active {
+            color: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+            <div class="question">What is the purpose of learning jQuery in now a days?</div>
+            <div class="answer">jQuery helps beginners understand DOM manipulation and event handling quickly before
+                moving to advanced frameworks.</div>
+        </div>
+
+        <div class="faq">
+            <div class="question">How does slideToggle improve user experience?</div>
+            <div class="answer">It provides smooth animation which makes the interface interactive and visually
+                appealing.</div>
+        </div>
+
+        <div class="faq">
+            <div class="question">What is the difference between JavaScript and jQuery?</div>
+            <div class="answer">JavaScript is a programming language, while jQuery is a library built using JavaScript
+                to simplify tasks.</div>
+        </div>
+
+        <div class="faq">
+            <div class="question">When should I use jQuery in real projects?</div>
+            <div class="answer">You can use jQuery for small projects, quick DOM operations, and simple UI interactions.
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">Is jQuery still relevant for front-end developers?</div>
+            <div class="answer">Yes, it is still useful for legacy projects and for understanding core JavaScript
+                concepts.</div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".question").click(function () {
+
+                $(".answer").not($(this).next()).slideUp();
+                $(".question").not($(this)).removeClass("active");
+
+                $(this).next(".answer").slideToggle();
+                $(this).toggleClass("active");
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

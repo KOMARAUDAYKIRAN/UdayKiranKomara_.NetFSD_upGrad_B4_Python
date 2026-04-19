@@ -1,0 +1,122 @@
+<!--Problem 1: Personal Notes Saver using LocalStorage (Level-1)
+Scenario
+You are building a simple web page where users can write daily notes and save them in their browser without using a server.
+📌 Requirements
+•	A textarea for writing notes.
+•	A Save button (using onclick).
+•	A Clear button.
+•	Notes must:
+Be stored in localStorage
+Automatically load when the page refreshes
+•	Display stored note on page load.
+
+🛠️ Technical Constraints
+•	Must use:
+o	onclick inline event
+o	localStorage.setItem()
+o	localStorage.getItem()
+o	localStorage.removeItem()
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Note Page</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f0fff4;
+        }
+
+        .box{
+            width:600px;
+            margin:auto;
+            margin-top:40px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            color:#1e8449;
+        }
+
+        textarea{
+            width:100%;
+            border:2px solid #27ae60;
+            border-radius:5px;
+            padding:10px;
+        }
+
+        button{
+            background:#27ae60;
+            color:white;
+            border:none;
+            padding:8px 15px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1e8449;
+        }
+
+    </style>
+
+</head>
+<body onload="loadNote()">
+
+<div class="box">
+
+    <h2>My Daily Notes</h2>
+
+    <textarea id="note" rows="10" coloumns="60" placeholder="Write your text Here"></textarea>
+    <br><br>
+
+    <button onclick="saveNote()">Save</button>
+    <button onclick="clearNote()">Clear</button>
+
+</div>
+
+<script>
+
+function saveNote()
+{
+    let data = document.getElementById("note").value;
+
+    if(data.trim() === "")
+    {
+        alert("kindly write something before saving");
+        return;
+    }
+
+    localStorage.setItem("text", data);
+    alert("Note is saved successfully ");
+}
+
+function loadNote()
+{
+    let savedData = localStorage.getItem("text");
+
+    if(savedData !== null)
+    {
+        document.getElementById("note").value = savedData;
+    }
+}
+
+function clearNote()
+{
+    localStorage.removeItem("text");
+    document.getElementById("note").value = "";
+    alert("Note cleared");
+}
+
+</script>
+
+</body>
+</html>

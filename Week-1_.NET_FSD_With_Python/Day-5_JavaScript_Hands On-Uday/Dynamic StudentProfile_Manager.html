@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:linear-gradient(to right,#36d1dc,#5b86e5);
+            text-align:center;
+            margin-top:60px;
+        }
+
+        .card{
+            background:white;
+            width:320px;
+            margin:auto;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h2{
+            color:#2c3e50;
+        }
+
+        p{
+            font-size:16px;
+            font-weight:bold;
+            color:#34495e;
+        }
+
+        input{
+            padding:6px;
+            margin-top:10px;
+            width:70%;
+        }
+
+        button{
+            margin-top:10px;
+            padding:8px 15px;
+            border:none;
+            background:#5b86e5;
+            color:white;
+            border-radius:6px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#3f5efb;
+        }
+
+    </style>
+
+</head>
+<body onload="updateStudentProfile(student)">
+
+<div class="card">
+
+<h2>Student Profile</h2>
+
+<div id="profile"></div>
+
+<input type="number" id="newMarks" placeholder="Enter new marks">
+
+<br>
+
+<button onclick="changeMarks()">Update Marks</button>
+
+</div>
+
+<script>
+
+let student = {
+    name : "Uday Kiran",
+    rollNo : 101,
+    marks : 85
+};
+
+function updateStudentProfile(studentObj)
+{
+    document.getElementById("profile").innerHTML =
+    "<p>Name : " + studentObj.name + "</p>" +
+    "<p>Roll No : " + studentObj.rollNo + "</p>" +
+    "<p>Marks : " + studentObj.marks + "</p>";
+}
+
+function updateMarks(newMarks)
+{
+    student.marks = newMarks;
+    updateStudentProfile(student);
+}
+
+function changeMarks()
+{
+    let m = document.getElementById("newMarks").value;
+
+    if(m === "")
+    {
+        alert("Enter marks");
+        return;
+    }
+
+    updateMarks(m);
+}
+
+</script>
+
+</body>
+</html>

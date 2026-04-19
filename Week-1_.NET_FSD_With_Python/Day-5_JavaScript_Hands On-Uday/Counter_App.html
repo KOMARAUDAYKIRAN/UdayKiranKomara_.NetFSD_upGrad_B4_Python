@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:linear-gradient(to right,#667eea,#764ba2);
+            text-align:center;
+            margin-top:80px;
+            color:white;
+        }
+
+        .box{
+            display:inline-block;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+            color:#333;
+        }
+
+        h2{
+            color:#5f27cd;
+        }
+
+        #count{
+            font-size:45px;
+            color:#222f3e;
+            margin:20px 0;
+            font-weight:bold;
+        }
+
+        button{
+            padding:10px 20px;
+            margin:6px;
+            border:none;
+            border-radius:8px;
+            background:#5f27cd;
+            color:white;
+            cursor:pointer;
+            font-size:15px;
+        }
+
+        button:hover{
+            background:#341f97;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>Counter App</h2>
+
+<div id="count">0</div>
+
+<button id="incBtn">Increment</button>
+<button id="resetBtn">Reset</button>
+
+</div>
+
+<script>
+
+let counter = 0;
+
+document.getElementById("incBtn")
+.addEventListener("click", function(){
+    incrementCounter(1);
+});
+
+document.getElementById("resetBtn")
+.addEventListener("click", resetCounter);
+
+function incrementCounter(step)
+{
+    counter = counter + step;
+    document.getElementById("count").innerHTML = counter;
+}
+
+function resetCounter()
+{
+    counter = 0;
+    document.getElementById("count").innerHTML = counter;
+}
+
+</script>
+
+</body>
+</html>

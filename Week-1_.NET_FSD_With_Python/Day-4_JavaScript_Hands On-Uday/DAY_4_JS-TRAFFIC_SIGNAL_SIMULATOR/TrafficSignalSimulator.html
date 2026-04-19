@@ -1,0 +1,54 @@
+<!--Problem 4: Traffic Signal Simulator (Level-2)
+Scenario
+A traffic control system needs a JavaScript program that displays instructions based on traffic signal color.
+📌 Requirements
+•	Store signal color in a variable ("red", "yellow", "green")
+•	Use a switch statement to display:
+•	Red → Stop
+•	Yellow → Get Ready
+•	Green → Go
+Handle invalid signal input gracefully-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Traffic Signal Simulator</title>
+</head>
+<body>
+
+<h2>Traffic Signal</h2>
+
+<script>
+
+let signal = prompt("Enter signal color (red / yellow / green):");
+
+// convert input to lowercase to handle RED, Red, etc.
+signal = signal.toLowerCase();
+
+switch(signal)
+{
+    case "red":
+        document.write("STOP");
+        console.log("STOP");
+        break;
+
+    case "yellow":
+        document.write("GET READY");
+        console.log("GET READY");
+        break;
+
+    case "green":
+        document.write("GO");
+        console.log("GO");
+        break;
+
+    default:
+        document.write("Invalid signal input");
+        console.log("Invalid signal input");
+}
+
+</script>
+
+</body>
+</html>

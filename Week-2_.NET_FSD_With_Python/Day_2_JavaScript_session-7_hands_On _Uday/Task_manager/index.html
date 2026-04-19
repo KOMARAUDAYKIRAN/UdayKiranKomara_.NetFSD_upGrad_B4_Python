@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Async Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="box">
+        <h2> Task Manager</h2>
+
+        <input type="text" id="taskInput" placeholder="Enter task">
+
+        <div class="btns">
+            <button onclick="addNewTask()">Add</button>
+            <button onclick="deleteExistingTask()">Delete</button>
+            <button onclick="showTasks()">List</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!-- Problem 3 (Level-2): Product List with Add to Cart Counter
+Scenario:
+An e-commerce website wants to display a list of products. When users click 'Add to Cart', the cart counter at the top should increase dynamically.
+Requirements
+* Display at least 4 products with 'Add to Cart' buttons.
+* Use jQuery to handle button click events.
+* Increase the cart counter dynamically without page refresh.
+* Disable the button once the product is added.
+* Display a small confirmation message beside the product.
+
+️ Technical Constraints
+* Use jQuery event delegation if needed.
+* Use .text(), .attr(), and .prop() methods.
+* No backend or database integration.
+
+Expectations:
+* Efficient event handling.
+* Proper use of jQuery methods for attribute manipulation.
+* Clean UI updates.
+ 
+Learning Outcome
+* Understand advanced DOM manipulation.
+* Use jQuery methods for dynamic content updates.
+* Apply event delegation concepts. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add to Cart Counter</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .cart-box {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #cartCount {
+            background: #ff4757;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 50%;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product h4 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #1e90ff;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3742fa;
+        }
+
+        button:disabled {
+            background: #b2bec3;
+            cursor: not-allowed;
+        }
+
+        .msg {
+            display: block;
+            margin-top: 8px;
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Our Products</h2>
+
+    <div class="cart-box">
+        Cart Items : <span id="cartCount">0</span>
+    </div>
+
+    <div class="product-container" id="productList">
+
+        <div class="product">
+            <h4>Vegetables</h4>
+            <button class="addBtn">Add to Cart</button>
+            <span class="msg"></span>
+        </div>
+
+        <div class="product">
+            <h4>Fruits</h4>
+            <button class="addBtn">Add to Cart</button>
+            <span class="msg"></span>
+        </div>
+
+        <div class="product">
+            <h4>Seeds</h4>
+            <button class="addBtn">Add to Cart</button>
+            <span class="msg"></span>
+        </div>
+
+        <div class="product">
+            <h4>Flowers</h4>
+            <button class="addBtn">Add to Cart</button>
+            <span class="msg"></span>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            let count = 0;
+
+            $("#productList").on("click", ".addBtn", function () {
+
+                count++;
+                $("#cartCount").text(count);
+
+                $(this)
+                    .text("Added")
+                    .prop("disabled", true);
+
+                $(this).siblings(".msg").text("Item added to cart");
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks Analyzer</title>
+
+    <!-- Linking external CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Student Marks Analyzer</h1>
+        <div id="result"></div>
+    </div>
+
+    <script>
+
+        const marks = [35, 96, 66, 73, 59];
+
+        const getTotal = arr => arr.reduce((sum, mark) => sum + mark, 0);
+        const getAverage = arr => getTotal(arr) / arr.length;
+        const getResult = avg => avg >= 35 ? "PASS" : "FAIL";
+
+        const total = getTotal(marks);
+        const average = getAverage(marks);
+        const result = getResult(average);
+
+        const marksList = marks.map((mark, index) =>
+            `<div class="subject">Subject ${index + 1}: ${mark}</div>`
+        ).join("");
+
+        document.getElementById("result").innerHTML = `
+            ${marksList}
+
+            <div class="total">Total Marks : ${total}</div>
+            <div class="average">Average Marks : ${average.toFixed(2)}</div>
+            <div class="${result === "PASS" ? "pass" : "fail"}">
+                Final Result : ${result}
+            </div>
+        `;
+
+    </script>
+
+</body>
+</html>

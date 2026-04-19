@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feedback Button</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>User Feedback</h2>
+
+    <button id="feedbackBtn">Submit Feedback</button>
+
+    <p id="message"></p>
+
+    <script>
+        // selecting elements
+        const btn = document.getElementById("feedbackBtn");
+        const msg = document.getElementById("message");
+
+        // event handling
+        btn.addEventListener("click", function () {
+
+            msg.textContent = " Your feedback has been submitted. Thank you!";
+
+        });
+    </script>
+
+</body>
+
+</html>

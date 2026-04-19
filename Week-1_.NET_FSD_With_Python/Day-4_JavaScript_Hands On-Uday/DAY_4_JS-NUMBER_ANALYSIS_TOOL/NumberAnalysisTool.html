@@ -1,0 +1,65 @@
+<!--Number Analysis Tool (Level-2)
+Scenario
+A utility program is required to analyze numbers and provide insights such as positivity, parity, and range.
+📌 Requirements
+•	Store a number in a variable
+•	Use conditional (ternary) operator to check:
+•	Positive or Negative
+•	Use if–else to check:
+•	Even or Odd
+•	Use a loop to print all numbers from 1 to the given number
+
+🛠️ Technical Constraints
+•	Store a number in a variable
+•	Use conditional (ternary) operator to check:
+•	Positive or Negative
+•	Use if–else to check:
+•	Even or Odd
+•	Use a loop to print all numbers from 1 to the given number -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Number Analysis Tool</title>
+</head>
+<body>
+
+<h2>Number Analysis</h2>
+
+<script>
+
+let num = Number(prompt("Enter a number:"));
+
+// Ternary → Positive or Negative
+let result = (num >= 0) ? "Positive Number" : "Negative Number";
+document.write(result + "<br>");
+console.log(result);
+
+// If–else → Even or Odd
+if(num % 2 === 0)
+{
+    document.write("Even Number<br>");
+    console.log("Even Number");
+}
+else
+{
+    document.write("Odd Number<br>");
+    console.log("Odd Number");
+}
+
+// Loop → 1 to given number
+document.write("Numbers from 1 to " + num + "<br>");
+console.log("Numbers from 1 to " + num);
+
+for(let i = 1; i <= num; i++)
+{
+    document.write(i + "<br>");
+    console.log(i);
+}
+
+</script>
+
+</body>
+</html>

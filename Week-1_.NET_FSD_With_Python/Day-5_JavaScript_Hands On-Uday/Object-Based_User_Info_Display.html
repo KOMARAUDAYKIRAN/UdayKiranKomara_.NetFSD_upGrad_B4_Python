@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Info</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4faff;
+        }
+
+        .box{
+            width:380px;
+            margin:auto;
+            margin-top:60px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+            text-align:center;
+        }
+
+        button{
+            padding:8px 15px;
+            background:#2980b9;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1f6692;
+        }
+
+        p{
+            font-weight:bold;
+            color:#2c3e50;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>User Details</h2>
+
+<button onclick="showData()">Display User Information</button>
+
+<p id="name"></p>
+<p id="age"></p>
+<p id="city"></p>
+
+</div>
+
+<script>
+
+let user = {
+    name : "Uday",
+    age  :   23,
+    city : "Chennai"
+};
+
+function displayUserInfo(userObj)
+{
+    document.getElementById("name").innerHTML =
+    "Name : " + userObj.name;
+
+    document.getElementById("age").innerHTML =
+    "Age : " + userObj.age;
+
+    document.getElementById("city").innerHTML =
+    "City : " + userObj.city;
+}
+
+function showData()
+{
+    displayUserInfo(user);
+}
+
+</script>
+
+</body>
+</html>

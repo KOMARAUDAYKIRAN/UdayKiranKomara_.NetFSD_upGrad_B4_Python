@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Card layout */
+.card {
+    background: #ffffff;
+    padding: 25px 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+}
+
+h1 {
+    color: #0072ff;
+}
+
+/* Subject box */
+.subject {
+    background: #f1f7ff;
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Result styles */
+.total {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.average {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.pass {
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fail {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
