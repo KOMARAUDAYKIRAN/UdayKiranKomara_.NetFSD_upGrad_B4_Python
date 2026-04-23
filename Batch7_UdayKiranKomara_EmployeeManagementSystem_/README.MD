@@ -1,8 +1,8 @@
 # Employee Management System – Mini Project 2
 
 ##  EMPLOYEE Details
-- **Name:** [Your Name]
-- **Batch:** [Your Batch No]
+- **Name:** Uday Kiran Komara
+- **Batch:** 7
 - **Project:** Employee Management System (Full Stack)
 
 ---
